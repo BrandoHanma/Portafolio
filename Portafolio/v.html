@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin Brando - Professional Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="logo"></div>
+            <ul class="nav-links">
+                <li><a href="#about">Sobre mi</a></li>
+                <li><a href="#technologies">Tecnologias</a></li>
+                <li><a href="#contact">Contacta me</a></li>
+            </ul>
+        <label class="theme-toggle">
+                <input type="checkbox">
+                <ion-icon name="sunny" class="sun"></ion-icon>
+                <ion-icon name="moon" class="moon"></ion-icon>
+                <span class="animateBg"></span>
+                <span class="toggle"></span>
+            </label>
+            <script src="script.js"></script>
+        </nav>
+    </header>
+
+    <!-- Scripts de Ion Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <main>
+        <section id="hero">
+            <div class="container">
+                <br>
+                <br>
+                <div class="hero-content">
+                    <img src="my-photo-profile.jpeg" alt="home" class="profile-image">
+                    <h1>Soy Kevin Brando</h1>
+                    <h3>Ingeniero de Software de aplicaciones de escritorio y desarrollador Web</h3>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i>Santiago de los Caballeros - República Dominicana 
+                        <img src="republica-dominicana.png" alt="Imagen pequeña" style="width: 20px; height: 20px; vertical-align: middle; margin-top: 5px;">
+                    </div>
+                    <div class="social-buttons">
+                        <a href="mailto:brandovicente2@gmail.com" class="social-btn">
+                            <i class="fas fa-envelope"></i>
+                            Email
+                        </a>
+                        <a href="cv-Kevin-Brando-Vicente.pdf" class="social-btn">
+                            <i class="fas fa-file-alt"></i>
+                            Curriculum
+                        </a>
+                        <a href="https://github.com/BrandoHanma" class="social-btn">
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/kevin-brando-vicente-205421242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-btn">
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="technologies" class="section">
+            <div class="container">
+                <br>
+                <br>
+                <h2 class="section-title">Tecnologias</h2>
+                <br>
+                <br>
+                <div class="tech-section">
+                    <h3 class="tech-title">Front-end</h3>
+                    <br>
+                    
+                    <div class="tech-list">
+                        <span class="tech-item"><i class="devicon-html5-plain colored"></i> HTML5</span>
+                        <span class="tech-item"><i class="devicon-css3-plain colored"></i> CSS3</span>
+                        <span class="tech-item"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                    </div>
+                </div>
+                <div class="tech-section">
+                    <h3 class="tech-title">Back-end</h3>
+                    <br>
+                    <div class="tech-list">
+                        <span class="tech-item"><i class="devicon-csharp-plain colored"></i> Csharp</span>
+                        <span class="tech-item"><i class="devicon-nodejs-plain colored"></i> JavaScript</span>
+                        <span class="tech-item"><i class="devicon-php-plain colored"></i> PHP</span>
+                    </div>
+                </div>
+                <div class="tech-section">
+                    <h3 class="tech-title">Bases de datos</h3>
+                    <br>
+                    <div class="tech-list">
+                        <span class="tech-item"><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span>
+                        <span class="tech-item"><i class="devicon-microsoftsqlserver-plain colored"></i> SQL Server</span>
+                        <span class="tech-item"><i class="devicon-mysql-plain colored"></i> MySQL</span>
+                    </div>
+                </div>
+                <div class="tech-section">
+                    <h3 class="tech-title">Herramientas</h3>
+                    <br>
+                    <div class="tech-list">
+                        <span class="tech-item"><i class="devicon-github-original colored"></i> GitHub</span>
+                        <span class="tech-item"><i class="devicon-vscode-plain colored"></i> VSCode</span>
+                        <span class="tech-item"><i class="devicon-visualstudio-plain colored"></i>Visual Studio</span>
+                        <span class="tech-item"><i class="devicon-figma-plain colored"></i> Figma</span>
+                        <span class="tech-item"><i class="devicon-postman-plain colored"></i> PostMan</span>
+                        <span class="tech-item"><i class="devicon-apache-plain colored"></i> Jmeter</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contacta me</h2>
+                <br>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html> 
