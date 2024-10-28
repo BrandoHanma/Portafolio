@@ -12,13 +12,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Manejar cambios en el toggle
     themeToggle.addEventListener('change', function() {
-        if (this.checked) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-        }
+        // Usar setTimeout para retrasar el cambio de tema
+        setTimeout(() => {
+            if (this.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }, 1200);
     });
 });
 toggleSwitch.addEventListener('change', switchTheme, false);

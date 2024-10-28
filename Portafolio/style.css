@@ -1,14 +1,15 @@
 :root {
     /* Light Theme (default) */
     --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --text-color: #333;
+    --secondary-color: #dedde1;
+    --text-color: #000000;
     --background-color: #ffffff;
-    --card-background: #0b7dffb6;
+    --card-background: #5257ea;
     --accent-color: #e74c3c;
-    --tech-section-bg: #fff;
+    --tech-section-bg: #5257ea;
+    --nav-link-hover: #212121;
+    --nav-link-glow: rgba(0, 240, 184, 0.5);
 }
-
 [data-theme="dark"] {
     --primary-color: #1a1a1a;
     --secondary-color: #021171;
@@ -17,6 +18,8 @@
     --card-background: #1e1e1e;
     --accent-color: #e74c3c;
     --tech-section-bg: #1e1e1e;
+    --nav-link-hover: #ffffff;
+    --nav-link-glow: rgba(255, 0, 0, 0.5);
 }
 
 /* Base Styles */
@@ -28,6 +31,10 @@ body {
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
+    transition: background-color 0.8s ease,
+    color 0.8s ease,
+    border-color 0.8s ease,
+    box-shadow 0.8s ease;
     background-color: var(--background-color);
     color: var(--text-color);
 }
@@ -81,17 +88,30 @@ nav ul {
     padding: 0;
     gap: 1.5rem;
 }
-
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s ease;
-    font-size: 0.9rem;
     color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    position: relative;
+    transition: all 0.5s ease; /* Aumentado el tiempo de transición */
 }
-
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--nav-link-hover);
+    transition: width 0.5s ease; /* Aumentado el tiempo de transición */
+}
 nav ul li a:hover {
-    color: var(--secondary-color);
+    color: var(--nav-link-hover);
+    text-shadow: 0 0 8px var(--nav-link-glow);
+    transform: translateY(-2px);
+}
+nav ul li a:hover::after {
+    width: 100%;
 }
 .about-card {
     background: var(--card-background);
@@ -146,6 +166,9 @@ input {
     filter: drop-shadow(0 0 2px rgba(0,0,0,.3));
     transition: 0.5s ease;
 }
+.sun, .moon {
+    transition: 0.8s ease; /* Aumentado el tiempo de transición */
+}
 
 .toggle {
     position: absolute;
@@ -159,7 +182,7 @@ input {
         inset 0 4px 4px rgba(0,0,0,0.1),
         inset 0 -2px 2px rgba(0,0,0,0.1);
     z-index: -1;
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 input:checked ~ .sun {
@@ -184,7 +207,7 @@ input:checked ~ .toggle {
     background: #fff;
     z-index: -2;
     clip-path: circle(0% at 50% 50%);
-    transition: clip-path 1s ease-out;
+    transition: clip-path 1.5s ease-out; 
     opacity: 1;
     pointer-events: none;
 }
@@ -198,12 +221,13 @@ input:not(:checked) ~ .animateBg {
 input:checked ~ .animateBg {
     background: #000;
     clip-path: circle(150vh at 50% 50%);
-    animation: fadeOut 0.5s ease-out 1s forwards;
+    animation: fadeOut 1s ease-out 1.5s forwards; /* Aumentado el tiempo de animación */
 }
+
 
 @keyframes fadeOut {
     from {
-        opacity: 1;
+        opacity: 2;
     }
     to {
         opacity: 0;
@@ -215,7 +239,7 @@ input:checked ~ .animateBg {
         opacity: 0;
     }
     to {
-        opacity: 1;
+        opacity: 2;
     }
 }
 /* Hero Section */
@@ -435,7 +459,8 @@ input:checked ~ .animateBg {
 
 .tech-item {
     background-color: var(--secondary-color);
-    color: #fff;
+    color: var(--text-color);
+    
     padding: 0.4rem 0.8rem;
     border-radius: 16px;
     font-size: 0.85rem;
