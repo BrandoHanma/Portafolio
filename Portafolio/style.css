@@ -44,6 +44,7 @@ body {
     margin: 0 auto; /* Esto centra el contenedor */
     padding: 0 20px; /* Añade un poco de espacio en los laterales */
 }
+
 body, p, h1, h2, h3, .card-content {
     color: var(--text-color);
 }
