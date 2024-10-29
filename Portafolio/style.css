@@ -64,31 +64,24 @@ header {
 
 nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 95%;
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
+    width: 80%; /* Reduce el ancho para centrar */
+    max-width: 1200px; /* Añade un ancho máximo */
     margin: 0 auto;
     padding: 0.5rem 0;
     transition: all 0.3s ease-in-out;
 }
 
-.logo {
-    font-size: 1.25rem;
-    font-weight: 600;
-}
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-}
-body, p {
-    font-family: 'Open Sans', sans-serif;
-}
 nav ul {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
     gap: 1.5rem;
+    position: absolute; /* Posicionamiento absoluto */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centro exacto */
 }
 nav ul li a {
     color: var(--text-color);
@@ -127,6 +120,17 @@ nav ul li a:hover::after {
     color: #fff;
 }
 
+.logo {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+body, p {
+    font-family: 'Open Sans', sans-serif;
+}
 .about-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
@@ -243,6 +247,100 @@ input:checked ~ .animateBg {
     to {
         opacity: 2;
     }
+}
+/* Contenedor del switch de idioma */
+.language-toggle {
+    margin-right: 0.5rem; /* Reducido el margen para estar más cerca del switch de tema */
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo base del switch */
+.lang-switch {
+    position: relative;
+    display: inline-block;
+    width: 52px; /* Ajustado para coincidir con el tamaño del switch de tema */
+    height: 26px; /* Ajustado para coincidir con el tamaño del switch de tema */
+}
+
+/* El slider */
+.lang-switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 26px;
+}
+
+.lang-option {
+    z-index: 1;
+    font-size: 11px;
+    font-weight: 500;
+    width: 22px; /* Reducimos ligeramente el ancho */
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color, #666);
+    transition: color 0.3s;
+}
+
+/* Color del texto según la selección */
+input:checked + .lang-slider .lang-en {
+    color: var(--active-text-color, #fff);
+}
+
+input:not(:checked) + .lang-slider .lang-es {
+    color: var(--active-text-color, #fff);
+}
+.lang-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background-color, #f0f0f0);
+    transition: 0.4s;
+    border-radius: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 4px; /* Ajustamos el padding horizontal */
+    border: 1px solid var(--border-color, #ddd);
+}
+
+.lang-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 24px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--switch-color, #2196F3);
+    transition: 0.4s;
+    border-radius: 17px;
+}
+
+/* Mover el indicador cuando está marcado */
+input:checked + .lang-slider:before {
+    transform: translateX(20px); /* Reducimos la distancia de traslación */
+}
+
+/* Estilos para modo oscuro */
+[data-theme="dark"] .lang-slider {
+    background-color: var(--dark-background, #2d2d2d);
+    border-color: var(--dark-border-color, #444);
+}
+
+[data-theme="dark"] .lang-option {
+    color: var(--dark-text-color, #888);
+}
+
+.switches-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto; /* Mantiene los switches a la derecha */
 }
 /* Hero Section */
 #hero {
