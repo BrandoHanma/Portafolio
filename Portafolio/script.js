@@ -261,3 +261,127 @@ document.addEventListener('DOMContentLoaded', () => {
     languageCheckbox.checked = savedLanguage === 'en';
     changeLanguage(savedLanguage);
 });
+// Función para manejar la animación de entrada y salida
+function handleIntersection(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Cuando el elemento entra en el viewport
+            entry.target.classList.add('visible');
+            
+            // Si es una sección de tecnologías, animar sus subsecciones
+            if (entry.target.id === 'technologies') {
+                const techSections = entry.target.querySelectorAll('.tech-section');
+                techSections.forEach((section, index) => {
+                    setTimeout(() => {
+                        section.classList.add('visible');
+                    }, index * 200);
+                });
+            }
+        } else {
+            // Cuando el elemento sale del viewport
+            entry.target.classList.remove('visible');
+            
+            // Si es una sección de tecnologías, remover la clase visible de las subsecciones
+            if (entry.target.id === 'technologies') {
+                const techSections = entry.target.querySelectorAll('.tech-section');
+                techSections.forEach(section => {
+                    section.classList.remove('visible');
+                });
+            }
+        }
+    });
+}
+
+// Configurar el Intersection Observer
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2
+};
+
+const observer = new IntersectionObserver(handleIntersection, options);
+
+// Observar todas las secciones
+document.querySelectorAll('.section').forEach(section => {
+    observer.observe(section);
+});
+class ParticleSystem {
+    constructor() {
+        this.container = document.getElementById('particles-container');
+        this.particleCount = 200;
+        this.particles = [];
+        this.init();
+    }
+
+    init() {
+        // Crear partículas
+        for (let i = 0; i < this.particleCount; i++) {
+            this.createParticle();
+        }
+
+        // Iniciar animación
+        this.animate();
+        this.setupMouseInteraction();
+    }
+
+    createParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+
+        // Tamaño aleatorio entre 2 y 6px
+        const size = Math.random() * 4 + 2;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+
+        // Posición inicial aleatoria
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+
+        this.container.appendChild(particle);
+
+        this.particles.push({
+            element: particle,
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            speedX: Math.random() * 2 - 1,
+            speedY: Math.random() * 2 - 1
+        });
+    }
+
+    animate = () => {
+        this.particles.forEach(particle => {
+            particle.x += particle.speedX;
+            particle.y += particle.speedY;
+
+            // Rebotar en los bordes
+            if (particle.x < 0 || particle.x > window.innerWidth) particle.speedX *= -1;
+            if (particle.y < 0 || particle.y > window.innerHeight) particle.speedY *= -1;
+
+            particle.element.style.transform = `translate(${particle.x}px, ${particle.y}px)`;
+        });
+
+        requestAnimationFrame(this.animate);
+    }
+
+    setupMouseInteraction() {
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            this.particles.forEach(particle => {
+                const dx = mouseX - particle.x;
+                const dy = mouseY - particle.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 100) {
+                    const angle = Math.atan2(dy, dx);
+                    particle.speedX = -Math.cos(angle) * 2;
+                    particle.speedY = -Math.sin(angle) * 2;
+                }
+            });
+        });
+    }
+}
+window.addEventListener('DOMContentLoaded', () => {
+    new ParticleSystem();
+});
