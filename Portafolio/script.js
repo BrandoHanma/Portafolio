@@ -155,27 +155,38 @@ const translations = {
         'databases': 'Bases de datos',
         'tools': 'Herramientas',
         
-       // Proyectos
-'projects-title': 'Proyectos',
-'data-category': 'Análisis de Datos',
-'view-report': 'Ver Informe',
+        // Proyectos
+        'projects-title': 'Proyectos',
+        'data-category': 'Análisis de Datos',
+        'view-report': 'Ver Informe',
+        
+        // Proyectos específicos de análisis de datos
+        'project1-title': 'Análisis Estadístico',
+        'project1-description': 'Reporte de ventas de la cadena de pizzas Papa Jonhs con visualizaciones detalladas. Incluye gráficos generados con Power BI y análisis estadístico.',
+        'project1-link': 'Ver Informe',
 
-// Proyectos específicos
-'project1-title': 'Análisis Estadístico',
-'project1-description': 'Reporte de ventas de la cadena de pizzas Papa Jonhs con visualizaciones detalladas. Incluye gráficos generados con Power BI y análisis estadístico.',
-'project1-link': 'Ver Informe',
+        'project2-title': 'Análisis de ventas',
+        'project2-description': 'Estudio detallado de datos sobre la ventas de telefonos inteligentes con visualizaciones detalladas. Incluye gráficos generados con Power BI y análisis estadístico.',
+        'project2-link': 'Ver Informe',
 
-'project2-title': 'Análisis de ventas',
-'project2-description': 'Estudio detallado de datos sobre la ventas de telefonos inteligentes con visualizaciones detalladas. Incluye gráficos generados con Power BI y análisis estadístico.',
-'project2-link': 'Ver Informe',
+        'project3-title': 'Análisis Estadístico',
+        'project3-description': 'Estudio detallado sobre todos los accidentes de trafico ocurridos en Kensington and Chelseacon con visualizaciones detalladas. Incluye gráficos generados con Power BI y análisis estadístico.',
+        'project3-link': 'Ver Informe',
 
-'project3-title': 'Análisis Estadístico',
-'project3-description': 'Estudio detallado sobre todos los accidentes de trafico ocurridos en Kensington and Chelseacon con visualizaciones detalladas. Incluye gráficos generados con Power BI y análisis estadístico.',
-'project3-link': 'Ver Informe',
+        'project4-title': 'Análisis Estadístico',
+        'project4-description': 'Estudio detallado sobre la ventas de de videos juegos desde 1980 hasta el 2017 con visualizaciones detallada. Incluye gráficos generados con Power BI y análisis estadístico.',
+        'project4-link': 'Ver Informe',
 
-'project4-title': 'Análisis Estadístico',
-'project4-description': 'Estudio detallado sobre la ventas de de videos juegos desde 1980 hasta el 2017 con visualizaciones detallada. Incluye gráficos generados con Power BI y análisis estadístico.',
-'project4-link': 'Ver Informe',
+        // Proyectos web personales
+        'web-project1-title': 'Mi primera Pagina Web',
+        'web-project1-description': 'Una pagina web sobre una tienda de accesorios y componentes Gaming hecho con HTML,CSS y JS',
+        'web-project1-category': 'Desarrollo Web',
+        
+        'web-project2-title': 'Login web',
+        'web-project2-description': 'Login web realizado para un cliente para su pagina web con diseño moderno y llamativo hecho con HMTL,CSS, JS Y PHP.',
+        'web-project2-category': 'Desarrollo Web',
+        'view-project': 'Ver Proyecto',
+
         // PDF Viewer
         'pdf-title': 'Informe de Análisis Estadístico',
         'close-pdf': 'Cerrar',
@@ -214,27 +225,38 @@ const translations = {
         'databases': 'Databases',
         'tools': 'Tools',
         
-       // Projects
-'projects-title': 'Projects',
-'data-category': 'Data Analysis',
-'view-report': 'View Report',
+        // Projects
+        'projects-title': 'Projects',
+        'data-category': 'Data Analysis',
+        'view-report': 'View Report',
 
-// Specific projects
-'project1-title': 'Statistical Analysis',
-'project1-description': 'Sales report of the Papa Johns pizza chain with detailed visualizations. It includes charts generated with Power BI and statistical analysis.',
-'project1-link': 'View Report',
+        // Specific data analysis projects
+        'project1-title': 'Statistical Analysis',
+        'project1-description': 'Sales report of the Papa Johns pizza chain with detailed visualizations. It includes charts generated with Power BI and statistical analysis.',
+        'project1-link': 'View Report',
 
-'project2-title': 'Sales Analysis',
-'project2-description': 'Detailed study of smartphone sales data with detailed visualizations. Includes charts generated with Power BI and statistical analysis.',
-'project2-link': 'View Report',
+        'project2-title': 'Sales Analysis',
+        'project2-description': 'Detailed study of smartphone sales data with detailed visualizations. Includes charts generated with Power BI and statistical analysis.',
+        'project2-link': 'View Report',
 
-'project3-title': 'Statistical Analysis',
-'project3-description': 'Detailed study of all traffic accidents in Kensington and Chelsea with detailed visualizations. Includes charts generated with Power BI and statistical analysis.',
-'project3-link': 'View Report',
+        'project3-title': 'Statistical Analysis',
+        'project3-description': 'Detailed study of all traffic accidents in Kensington and Chelsea with detailed visualizations. Includes charts generated with Power BI and statistical analysis.',
+        'project3-link': 'View Report',
 
-'project4-title': 'Statistical Analysis',
-'project4-description': 'Detailed study of video game sales from 1980 to 2017 with detailed visualizations. Includes charts generated with Power BI and statistical analysis.',
-'project4-link': 'View Report',
+        'project4-title': 'Statistical Analysis',
+        'project4-description': 'Detailed study of video game sales from 1980 to 2017 with detailed visualizations. Includes charts generated with Power BI and statistical analysis.',
+        'project4-link': 'View Report',
+
+        // Web personal projects
+        'web-project1-title': 'My First Web Page',
+        'web-project1-description': 'A web page about a gaming accessories and components store made with HTML, CSS, and JS',
+        'web-project1-category': 'Web Development',
+        
+        'web-project2-title': 'Web Login',
+        'web-project2-description': 'Web login created for a client with a modern and eye-catching design made with HTML, CSS, JS, and PHP.',
+        'web-project2-category': 'Web Development',
+        'view-project': 'View Project',
+
         // PDF Viewer
         'pdf-title': 'Statistical Analysis Report',
         'close-pdf': 'Close',
