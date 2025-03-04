@@ -155,6 +155,31 @@ const translations = {
         'databases': 'Bases de datos',
         'tools': 'Herramientas',
         
+       // Proyectos
+'projects-title': 'Proyectos',
+'data-category': 'Análisis de Datos',
+'view-report': 'Ver Informe',
+
+// Proyectos específicos
+'project1-title': 'Análisis Estadístico',
+'project1-description': 'Reporte de ventas de la cadena de pizzas Papa Jonhs con visualizaciones detalladas. Incluye gráficos generados con Power BI y análisis estadístico.',
+'project1-link': 'Ver Informe',
+
+'project2-title': 'Análisis de ventas',
+'project2-description': 'Estudio detallado de datos sobre la ventas de telefonos inteligentes con visualizaciones detalladas. Incluye gráficos generados con Power BI y análisis estadístico.',
+'project2-link': 'Ver Informe',
+
+'project3-title': 'Análisis Estadístico',
+'project3-description': 'Estudio detallado sobre todos los accidentes de trafico ocurridos en Kensington and Chelseacon con visualizaciones detalladas. Incluye gráficos generados con Power BI y análisis estadístico.',
+'project3-link': 'Ver Informe',
+
+'project4-title': 'Análisis Estadístico',
+'project4-description': 'Estudio detallado sobre la ventas de de videos juegos desde 1980 hasta el 2017 con visualizaciones detallada. Incluye gráficos generados con Power BI y análisis estadístico.',
+'project4-link': 'Ver Informe',
+        // PDF Viewer
+        'pdf-title': 'Informe de Análisis Estadístico',
+        'close-pdf': 'Cerrar',
+        
         // Contacto
         'contact-title': 'Contáctame',
         'phone': 'Teléfono',
@@ -188,6 +213,31 @@ const translations = {
         'backend': 'Back-end',
         'databases': 'Databases',
         'tools': 'Tools',
+        
+       // Projects
+'projects-title': 'Projects',
+'data-category': 'Data Analysis',
+'view-report': 'View Report',
+
+// Specific projects
+'project1-title': 'Statistical Analysis',
+'project1-description': 'Sales report of the Papa Johns pizza chain with detailed visualizations. It includes charts generated with Power BI and statistical analysis.',
+'project1-link': 'View Report',
+
+'project2-title': 'Sales Analysis',
+'project2-description': 'Detailed study of smartphone sales data with detailed visualizations. Includes charts generated with Power BI and statistical analysis.',
+'project2-link': 'View Report',
+
+'project3-title': 'Statistical Analysis',
+'project3-description': 'Detailed study of all traffic accidents in Kensington and Chelsea with detailed visualizations. Includes charts generated with Power BI and statistical analysis.',
+'project3-link': 'View Report',
+
+'project4-title': 'Statistical Analysis',
+'project4-description': 'Detailed study of video game sales from 1980 to 2017 with detailed visualizations. Includes charts generated with Power BI and statistical analysis.',
+'project4-link': 'View Report',
+        // PDF Viewer
+        'pdf-title': 'Statistical Analysis Report',
+        'close-pdf': 'Close',
         
         // Contact
         'contact-title': 'Contact me',
@@ -384,4 +434,37 @@ class ParticleSystem {
 }
 window.addEventListener('DOMContentLoaded', () => {
     new ParticleSystem();
+});
+// Funcionalidad de filtrado para proyectos
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener los elementos del DOM
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    // Agregar event listeners a los botones de filtro
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Quitar la clase active de todos los botones
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Añadir la clase active al botón clickeado
+            this.classList.add('active');
+            
+            // Obtener el valor del filtro
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Filtrar los proyectos
+            projectCards.forEach(card => {
+                if (filterValue === 'all') {
+                    card.classList.add('active');
+                } else {
+                    if (card.getAttribute('data-category') === filterValue) {
+                        card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
+                    }
+                }
+            });
+        });
+    });
 });

@@ -16,6 +16,7 @@
             <ul class="nav-links">
                 <li><a href="#about" class="scroll-link" data-i18n="about">Sobre mi</a></li>
                 <li><a href="#technologies" class="scroll-link" data-i18n="technologies">Tecnologias</a></li>
+                <li><a href="#projects" class="scroll-link" data-i18n="Projects">Proyectos</a></li>
                 <li><a href="#contact" class="scroll-link" data-i18n="contact">Contáctame</a></li>
             </ul>
             <!-- El switch -->
@@ -53,7 +54,7 @@
                             <i class="fas fa-envelope"></i>
                             <span data-i18n="email">Email</span>
                         </a>
-                        <a href="cv-Kevin-Brando-Vicente.pdf" class="social-btn">
+                        <a href="cvKevinATS.pdf" class="social-btn">
                             <i class="fas fa-file-alt"></i>
                             <span data-i18n="curriculum">Curriculum</span>
                         </a>
@@ -129,11 +130,121 @@
                         <span class="tech-item"><i class="devicon-figma-plain colored"></i> Figma</span>
                         <span class="tech-item"><i class="devicon-postman-plain colored"></i> PostMan</span>
                         <span class="tech-item"><i class="devicon-apache-plain colored"></i> Jmeter</span>
+                        <span class="tech-item"><i class="devicon-pytest-plain colored"></i> Power BI  </span>
                     </div>
                 </div>
             </div>
         </section>
-
+        <section id="projects" class="section">
+            <div class="container">
+                <br>
+                <h2 class="section-title" data-i18n="projects-title">Proyectos</h2>
+                 <!-- <div class="project-filter">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="web">Desarrollo Web</button>
+                   <button class="filter-btn" data-filter="desktop">Aplicaciones de Escritorio</button>  
+                    <button class="filter-btn" data-filter="data">Análisis de Datos</button>
+                </div>-->
+                
+                <div class="projects-grid">
+                    <!-- Proyectos Web 
+                    <div class="project-card active" data-category="web">
+                        <div class="project-image">
+                            <img src="placeholder-web.jpg" alt="E-commerce Website">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category web">Desarrollo Web</span>
+                            <h3 class="project-title">E-commerce Website</h3>
+                            <p class="project-description">Tienda online desarrollada con React, Node.js y MongoDB. Incluye sistema de pagos, gestión de usuarios y panel de administración.</p>
+                            <a href="#" class="project-link">Ver Proyecto</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card active" data-category="web">
+                        <div class="project-image">
+                            <img src="placeholder-web.jpg" alt="Blog Personal">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category web">Desarrollo Web</span>
+                            <h3 class="project-title">Blog Personal</h3>
+                            <p class="project-description">Blog desarrollado con WordPress y tema personalizado. Incluye categorías, comentarios y sistema de búsqueda.</p>
+                            <a href="#" class="project-link">Ver Proyecto</a>
+                        </div>
+                    </div>
+                    -->
+                    <!-- Proyectos de Escritorio 
+                    <div class="project-card active" data-category="desktop">
+                        <div class="project-image">
+                            <img src="placeholder-desktop.jpg" alt="Sistema de Inventario">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category desktop">Aplicación de Escritorio</span>
+                            <h3 class="project-title">Sistema de Inventario</h3>
+                            <p class="project-description">Aplicación desarrollada en C# con WPF para gestión de inventario. Incluye reportes y alertas de stock.</p>
+                            <a href="#" class="project-link">Ver Proyecto</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card active" data-category="desktop">
+                        <div class="project-image">
+                            <img src="placeholder-desktop.jpg" alt="Gestor de Tareas">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category desktop">Aplicación de Escritorio</span>
+                            <h3 class="project-title">Gestor de Tareas</h3>
+                            <p class="project-description">Aplicación de escritorio para gestionar tareas y proyectos. Desarrollada con C# y SQL Server.</p>
+                            <a href="#" class="project-link">Ver Proyecto</a>
+                        </div>
+                    </div>
+                    
+                     Proyectos de Análisis de Datos -->
+                     <div class="project-card active" data-category="data">
+                        <div class="project-image">
+                            <img src="RPizza.png" alt="Análisis Estadístico">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category data" data-i18n="data-category">Análisis de Datos</span>
+                            <h3 class="project-title" data-i18n="project1-title">Análisis Estadístico</h3>
+                            <p class="project-description" data-i18n="project1-description">Reporte de ventas de la cadena de pizzas Papa Jonhs con visualizaciones detalladas. Incluye gráficos generados con Power BI y análisis estadístico.</p>
+                            <a href="reporte de pizzas.pdf" class="project-link view-pdf" target="_blank" data-i18n="project1-link">Ver Informe</a>
+                        </div>
+                    </div>
+                    <div class="project-card active" data-category="data">
+                        <div class="project-image">
+                            <img src="RCelulares.png" alt="Análisis Estadístico">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category data" data-i18n="data-category">Análisis de Datos</span>
+                            <h3 class="project-title" data-i18n="project2-title">Análisis de ventas</h3>
+                            <p class="project-description" data-i18n="project2-description">Estudio detallado de datos sobre la ventas de telefonos inteligentes con visualizaciones detalladas. Incluye gráficos generados con Power BI y análisis estadístico.</p>
+                            <a href="reporte_celulares.pdf" class="project-link view-pdf" target="_blank" data-i18n="project2-link">Ver Informe</a>  
+                        </div>
+                    </div>
+                    
+                    <div class="project-card active" data-category="data">
+                        <div class="project-image">
+                            <img src="Raccidentes.png" alt="Análisis Estadístico">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category data" data-i18n="data-category">Análisis de Datos</span>
+                            <h3 class="project-title" data-i18n="project3-title">Análisis Estadístico</h3>
+                            <p class="project-description" data-i18n="project3-description">Estudio detallado sobre todos los accidentes de trafico ocurridos en Kensington and Chelseacon con visualizaciones detalladas. Incluye gráficos generados con Power BI y análisis estadístico.</p>
+                            <a href="reporte-accidentes.pdf" class="project-link view-pdf" target="_blank" data-i18n="project3-link">Ver Informe</a>  
+                        </div>
+                    </div>
+                    
+                    <div class="project-card active" data-category="data">
+                        <div class="project-image">
+                            <img src="Rjuegos.png" alt="Análisis Estadístico">
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category data" data-i18n="data-category">Análisis de Datos</span>
+                            <h3 class="project-title" data-i18n="project4-title">Análisis Estadístico</h3>
+                            <p class="project-description" data-i18n="project4-description">Estudio detallado sobre la ventas de de videos juegos desde 1980 hasta el 2017 con visualizaciones detallada. Incluye gráficos generados con Power BI y análisis estadístico.</p>
+                            <a href="reporte_juegos.pdf" class="project-link view-pdf" target="_blank" data-i18n="project4-link">Ver Informe</a>  
+                        </div>
+                    </div>
+        </section>
         <section id="contact" class="section">
             <div class="container">
                 <br>

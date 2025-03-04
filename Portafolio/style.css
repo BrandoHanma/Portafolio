@@ -9,6 +9,8 @@
     --tech-section-bg: #5257ea;
     --nav-link-hover: #212121;
     --nav-link-glow: rgba(0, 240, 184, 0.5);
+    --project-link:#212121;
+    --project-card:var(--background-color);
 }
 
 [data-theme="dark"] {
@@ -21,6 +23,7 @@
     --tech-section-bg: #1e1e1e;
     --nav-link-hover: #ffffff;
     --nav-link-glow: rgba(255, 0, 0, 0.5);
+
 }
 
 /* Base Styles */
@@ -577,6 +580,239 @@ footer {
 }
 ion-icon {
     font-size: 100px; /* Ajusta el tamaño del icono según necesites */
+}
+/* Estilos para la sección de proyectos */
+#projects {
+    padding: 4rem 0;
+}
+
+.project-filter {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: none;
+    border: 2px solid var(--accent-color, #3498db);
+    color: var(--accent-color, #3498db);
+    padding: 0.5rem 1.5rem;
+    margin: 0.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--accent-color, #3498db);
+    color: var(--text-color-inverse, white);
+}
+
+.filter-btn.active {
+    background-color: var(--accent-color, #3498db);
+    color: var(--text-color-inverse, white);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: var(--background-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px  rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: none; /* Initially hidden, will be shown based on filter */
+}
+
+.project-card.active {
+    display: block;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    background-color: #ddd;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-category {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.web {
+    background-color: #3498db;
+    color: white;
+}
+
+.desktop {
+    background-color: #27ae60;
+    color: white;
+}
+
+.data {
+    background-color: #9b59b6;
+    color: white;
+}
+
+.project-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color, #2c3e50);
+}
+
+.project-description {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color, #2c3e50);
+    color: var(--project-link); /* Usa la variable CSS en lugar del valor fijo */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Añade transición al color también */
+}
+
+.project-link:hover {
+    background-color: var(--accent-color-dark, #ff1212);
+}
+
+/* Estilos para el visualizador de PDF */
+.pdf-viewer-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.pdf-viewer-container.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf-viewer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--accent-color, #3498db);
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.pdf-viewer-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.close-pdf {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+.close-pdf:hover {
+    transform: scale(1.2);
+}
+
+.pdf-viewer {
+    flex-grow: 1;
+    background-color: #f5f5f5;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+
+.pdf-viewer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Estilos para el botón de visualizar PDF */
+.view-pdf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.view-pdf:before {
+    content: "\f1c1"; /* Código de Font Awesome para el ícono de PDF */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* Hacer que el cuerpo no se pueda desplazar cuando el visor de PDF está activo */
+body.pdf-active {
+    overflow: hidden;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .pdf-viewer-container {
+        padding: 10px;
+    }
+    
+    .pdf-viewer-header {
+        padding: 8px 12px;
+    }
+    
+    .pdf-viewer-header h4 {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
 }
 /* Media Queries */
 @media (max-width: 1024px) {
